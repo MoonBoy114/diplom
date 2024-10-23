@@ -14,9 +14,22 @@ import androidx.compose.ui.tooling.preview.Preview
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setContent {
-            AppGrid()
+            var isLog = remember  { mutableStateOf(false)}
+            val errorMessage = remember { mutableStateOf<String?>(null) }
+            var username =
+            if(isLog.value) {
+                AppGrid()
+            } else {
+                LoginScreen(onLoginClick = {username, password ->
+                    if(username == "admin" && password == "password") {
+                        isLog.value = true
+                    } else {
+                        // Установка сообщения об ошибке
+                        errorMessage.value = "Неверное имя пользователя или пароль"
+                    }
+                }, errorMessage.value)
+            }
         }
 
     }
