@@ -1,7 +1,12 @@
 package compose.project.demo
 
 
-
+//noinspection UsingMaterialAndMaterial3Libraries
+//noinspection UsingMaterialAndMaterial3Libraries
+//noinspection UsingMaterialAndMaterial3Libraries
+//noinspection UsingMaterialAndMaterial3Libraries
+//noinspection UsingMaterialAndMaterial3Libraries
+//noinspection UsingMaterialAndMaterial3Libraries
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -11,7 +16,6 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -21,7 +25,6 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.BottomNavigation
 import androidx.compose.material.BottomNavigationItem
 import androidx.compose.material.Card
-import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -29,6 +32,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -115,28 +119,45 @@ fun BottomNavigationBar() {
         contentColor = Color.White
     ) {
         BottomNavigationItem(
-            icon = { Icon(painterResource(Res.drawable.compose_multiplatform), contentDescription = null, modifier = Modifier.size(24.dp)) },
-            label = { Text("Настройки") },
+            icon = { Image(
+                painter = painterResource(R.drawable.settings), // Убедитесь, что ресурс доступен
+                contentDescription = null,
+                modifier = Modifier.size(24.dp)
+            )},
+            label = { Text("Настройки", fontWeight = FontWeight.Bold,
+                color = Color.White) },
             selected = false,
             onClick = {  },
             modifier = Modifier.weight(1f)
         )
         BottomNavigationItem(
-            icon = { Icon(painterResource(Res.drawable.compose_multiplatform), contentDescription = null, modifier = Modifier.size(24.dp)) },
-            label = { Text("Профиль") },
+            icon = { Image(
+                painter = painterResource(R.drawable.about), // Убедитесь, что ресурс доступен
+                contentDescription = null,
+                modifier = Modifier.size(24.dp)
+            )},
+            label = { Text("О приложении", fontWeight = FontWeight.Bold,
+                color = Color.White) },
             selected = false,
             onClick = {  },
             modifier = Modifier.weight(1f)
         )
         BottomNavigationItem(
-            icon = { Icon(painterResource(Res.drawable.compose_multiplatform), contentDescription = null, modifier = Modifier.size(24.dp)) },
-            label = { Text("О приложении") },
+            icon = { Image(
+                painter = painterResource(R.drawable.profile), // Убедитесь, что ресурс доступен
+                contentDescription = null,
+                modifier = Modifier.size(24.dp)
+            )},
+            label = { Text("Профиль", fontWeight = FontWeight.Bold,
+                color = Color.White) },
             selected = false,
             onClick = {  },
             modifier = Modifier.weight(1f)
         )
     }
 }
+
+
 
 @Preview
 @Composable
