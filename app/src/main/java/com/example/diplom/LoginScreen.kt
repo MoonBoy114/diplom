@@ -120,9 +120,9 @@ fun LoginScreenAndroid(
             trailingIcon = {
                 IconButton(onClick = { passwordVisible = !passwordVisible }) {
                     val icon = if (passwordVisible) {
-                        painterResource(id = R.drawable.eye) // Используйте ваш ресурс для открытого глаза
+                        painterResource(id = R.drawable.eye)
                     } else {
-                        painterResource(id = R.drawable.closed_eye) // Используйте ваш ресурс для закрытого глаза
+                        painterResource(id = R.drawable.closed_eye)
                     }
                     Image(painter = icon, contentDescription = if (passwordVisible) "Скрыть" else "Показать", modifier = Modifier.clickable { passwordVisible = !passwordVisible })
                 }
