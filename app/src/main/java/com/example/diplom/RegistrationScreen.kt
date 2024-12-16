@@ -41,7 +41,7 @@ fun hashPassword(password: String): String {
         .joinToString("") { "%02x".format(it) }
 }
 
-// ViewModel для управления логикой регистрации
+
 
 
 @Composable

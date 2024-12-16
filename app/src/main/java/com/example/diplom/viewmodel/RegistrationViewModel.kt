@@ -15,4 +15,5 @@ class RegistrationViewModel(private val userRepository: UserRepository) : ViewMo
             userRepository.registerUser(user)
         }
     }
+
 }
