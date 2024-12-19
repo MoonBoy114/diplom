@@ -50,6 +50,8 @@ dependencies {
     implementation(libs.material3)
     implementation(libs.androidx.espresso.core)
     implementation(libs.androidx.constraintlayout.compose.android)
+    implementation(libs.androidx.navigation.runtime.ktx)
+    implementation(libs.androidx.navigation.compose)
     val room_version = "2.6.1"
 
     implementation("androidx.room:room-runtime:$room_version")

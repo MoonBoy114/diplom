@@ -6,6 +6,8 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.diplom.data.Calculation
 import com.example.diplom.data.Note
+import com.example.diplom.data.NoteDao
+import com.example.diplom.data.Notes
 import com.example.diplom.data.Timer
 import com.example.diplom.data.Translation
 import com.example.diplom.data.User
@@ -15,6 +17,7 @@ import com.example.diplom.data.UserDao
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun userDao(): UserDao
+    abstract fun noteDao(): NoteDao
 
     companion object {
         @Volatile

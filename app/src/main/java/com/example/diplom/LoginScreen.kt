@@ -144,7 +144,7 @@ fun LoginScreenAndroid(
                     }
                 } else {
                     loginError = "Заполните все поля"
-                    Toast.makeText(context, "Заполните все поля", Toast.LENGTH_SHORT).show()
+
                 }
             },
             modifier = Modifier.fillMaxWidth()
